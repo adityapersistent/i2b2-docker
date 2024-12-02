@@ -2,7 +2,7 @@ services:
 
   i2b2c-web:
     image: waghsk/devi2b2c:${I2B2_WEB_TAG} 
-    container_name: i2b2c-web
+    container_name: i2b2-web
     restart: unless-stopped
     ports:
       - "80:80"
