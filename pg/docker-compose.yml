@@ -1,7 +1,7 @@
 services:
 
   i2b2c-web:
-    image: waghsk/devi2b2c:${I2B2_WEB_TAG} 
+    image: i2b2/i2b2-web:${I2B2_WEB_TAG} 
     container_name: i2b2-web
     restart: unless-stopped
     ports:
@@ -14,7 +14,7 @@ services:
       - i2b2-net
 
   i2b2-wildfly:
-    image: waghsk/devi2b2c:${I2B2_WILDFLY_TAG}
+    image: i2b2/i2b2-wildfly:${I2B2_WILDFLY_TAG}
     container_name: i2b2-wildfly
     restart: unless-stopped
     environment:
@@ -58,7 +58,7 @@ services:
       - i2b2-pg
 
   i2b2-pg:
-    image: waghsk/devi2b2c:${I2B2_PG_TAG}
+    image: i2b2/i2b2-pg:${I2B2_PG_TAG}
     container_name: i2b2-pg
     environment:
       - POSTGRES_PASSWORD=${I2B2_PG_PASS}
