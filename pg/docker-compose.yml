@@ -60,7 +60,7 @@ services:
     depends_on:
       - i2b2-data-pgsql
 
-  i2b2-pg:
+  i2b2-data-pgsql:
     image: i2b2/i2b2-data-pgsql:${I2B2_DATA_PGSQL_TAG}
     container_name: i2b2-data-pgsql
     environment:
