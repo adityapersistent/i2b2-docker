@@ -17,3 +17,6 @@ service postgresql restart
 echo "waiting for local database to get started "
 sleep 100
 
+
+#sudo -u postgres psql -c "alter user postgres with PASSWORD 'demoprod';"
+ 
