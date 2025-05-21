@@ -53,8 +53,8 @@ services:
       - DS_WD_SCHEMA=${I2B2_DS_WD_SCHEMA}
     networks:
       - i2b2-net
-    depends_on:
-      - i2b2-data-pgsql
+    # depends_on:
+    #   - i2b2-data-pgsql
 
   i2b2-data-pgsql:
     image: i2b2/i2b2-data-pgsql:${I2B2_DATA_PGSQL_TAG}

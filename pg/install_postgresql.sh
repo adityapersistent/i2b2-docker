@@ -1,4 +1,3 @@
-sudo DEBIAN_FRONTEND=noninteractive
 sudo apt-get update
 
 sudo apt-get install -y postgresql-16 postgresql-contrib-16
