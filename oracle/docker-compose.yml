@@ -15,7 +15,7 @@ services:
       - i2b2-net
 
   i2b2-core-server:
-    image: i2b2/i2b2-core-server:${I2B2_CORE_SERVER_TAG}
+    image: vaditya1998/new_repo:i2b2-core-server-260625 #i2b2/i2b2-core-server:${I2B2_CORE_SERVER_TAG}
     container_name: i2b2-core-server
     restart: unless-stopped
     environment:
@@ -55,7 +55,7 @@ services:
       - i2b2-data-oracle
 
   i2b2-data-oracle:
-    image: i2b2/i2b2-data-oracle:${I2B2_DATA_ORACLE_TAG}
+    image: vaditya1998/new_repo:i2b2-data-oracle-container-commit  #i2b2/i2b2-data-oracle:${I2B2_DATA_ORACLE_TAG}
     container_name: i2b2-data-oracle
 
     environment:
