@@ -1,6 +1,10 @@
+#sh backup_restore_pgsql.sh dummy_host 5432 i2b2 demouser i2b2
 docker-compose up -d i2b2-data-pgsql i2b2-core-server i2b2-webclient
+#docker rm -f $(docker ps -a -q)
+ip=$(docker network inspect i2b2-net -f '{{range .IPAM.Config}}{{.Gateway}}{{end}}') 
 
 host=$1
+host=$ip
 port=$2
 username=$3
 password=$4
@@ -18,7 +22,7 @@ echo "Dump process completed"
 
 
 #install postgresql database locally and update the configuration 
-#bash install_postgresql.sh
+bash install_postgresql.sh
 
 echo "restore process started"
 
