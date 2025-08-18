@@ -55,6 +55,8 @@ services:
       - DS_WD_DB=${I2B2_DS_WD_DB}
       - DS_WD_SCHEMA=${I2B2_DS_WD_SCHEMA}
 
+    # volumes:
+    #   - ./custom_datasource.txt:/opt/jboss/wildfly/customization/custom_datasource.txt
     networks:
       - i2b2-net
     depends_on:

@@ -56,6 +56,8 @@ services:
 
     networks:
       - i2b2-net
+    # volumes:
+    #   - ./custom_datasource.txt:/opt/jboss/wildfly/customization/custom_datasource.txt
     depends_on:
       - i2b2-data-mssql
 
