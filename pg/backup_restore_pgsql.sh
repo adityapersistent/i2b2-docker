@@ -1,10 +1,10 @@
 #sh backup_restore_pgsql.sh dummy_host 5432 i2b2 demouser i2b2
 docker-compose up -d i2b2-data-pgsql i2b2-core-server i2b2-webclient
 #docker rm -f $(docker ps -a -q)
-ip=$(docker network inspect i2b2-net -f '{{range .IPAM.Config}}{{.Gateway}}{{end}}') 
+docker_network_gateway_ip=$(docker network inspect i2b2-net -f '{{range .IPAM.Config}}{{.Gateway}}{{end}}') 
 
 host=$1
-host=$ip
+host=$docker_network_gateway_ip
 port=$2
 username=$3
 password=$4

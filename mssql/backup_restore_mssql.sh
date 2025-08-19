@@ -4,10 +4,10 @@
 docker compose up -d 
 
 # we are restoring the database to a new docker mssql database container hence we are providing the docker network ip as a remote host ip
-ip=$(docker network inspect i2b2-net -f '{{range .IPAM.Config}}{{.Gateway}}{{end}}') 
+docker_network_gateway_ip=$(docker network inspect i2b2-net -f '{{range .IPAM.Config}}{{.Gateway}}{{end}}') 
 
 host=$1
-host=$ip
+host=$docker_network_gateway_ip
 port=$2
 username=$3
 password=$4
