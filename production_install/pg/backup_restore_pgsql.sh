@@ -22,7 +22,7 @@ echo "Dump process completed"
 
 
 #install postgresql database locally and update the configuration 
-bash install_postgresql.sh
+# bash install_postgresql.sh
 
 echo "restore process started"
 
@@ -51,7 +51,7 @@ sed -i "s/${default_dbname}/_DB=${dbname}/g" .env
 
 #docker rm -f i2b2-data-pgsql #uncomment this line if you have space issue
 
-docker compose down
+docker rm -f i2b2-core-server i2b2-webclient
 docker compose up -d i2b2-core-server i2b2-webclient
 
 echo "Started i2b2-core-server & i2b2-webclient Docker containers"
