@@ -21,8 +21,8 @@ docker exec -i -e PG_PASSWORD=demouser i2b2-data-pgsql pg_dump -U postgres -d i2
 echo "Dump process completed"
 
 
-#install postgresql database locally and update the configuration 
-# bash install_postgresql.sh
+#install native postgresql database locally and update the configuration 
+# bash create_native_pg_server.sh
 
 echo "restore process started"
 
