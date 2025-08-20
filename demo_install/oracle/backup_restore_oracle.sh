@@ -73,8 +73,8 @@ default_service_name="_SERVICE_NAME=XEPDB1"
 
 sed -i "s/${default_host}/_IP=${host}/g" .env
 sed -i "s/${default_port}/_PORT=${port}/g" .env
-sed -i "s/${default_username}/_USER=${username}/g" .env
-sed -i "s/${default_password}/_PASS=${password}/g" .env
+# sed -i "s/${default_username}/_USER=${username}/g" .env
+# sed -i "s/${default_password}/_PASS=${password}/g" .env
 sed -i "s/${default_service_name}/_SERVICE_NAME=${dbServiceName}/g" .env
 
 
