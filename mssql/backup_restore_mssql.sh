@@ -6,7 +6,7 @@ docker compose up -d
 docker_network_gateway_ip=$(docker network inspect i2b2-net -f '{{range .IPAM.Config}}{{.Gateway}}{{end}}')
  
 host=$1
-export host=$docker_network_gateway_ip
+
 export port=$2
 export username=$3
 export password=$4
@@ -20,7 +20,8 @@ export wd_dbname=$9
 echo "Host- $host Port- $port Username- $username Password- $password "
 echo "waiting for database docker container to get start"
  
-docker run -i -e "ACCEPT_EULA=Y"  -e "SA_PASSWORD=<YourStrong@Passw0rd>"  -p 1432:1433 --net i2b2-net -v i2b2-mssql-vol-gen:/var/opt/mssql --name i2b2-mssql -d mcr.microsoft.com/mssql/server:2017-latest
+#export host=$docker_network_gateway_ip
+#docker run -i -e "ACCEPT_EULA=Y"  -e "SA_PASSWORD=<YourStrong@Passw0rd>"  -p 1432:1433 --net i2b2-net -v i2b2-mssql-vol-gen:/var/opt/mssql --name i2b2-mssql -d mcr.microsoft.com/mssql/server:2017-latest
  
 sleep 180
 docker exec -i i2b2-data-mssql /opt/mssql-tools/bin/sqlcmd -S localhost,1433 -U sa -P '<YourStrong@Passw0rd>' -Q "backup database i2b2demodata to DISK =  N'/tmp/i2b2demodata.bak' WITH INIT , COMPRESSION;"
