@@ -39,7 +39,6 @@ docker exec -i i2b2-data-mssql /opt/sqlpackage/sqlpackage \
 /SourcePassword:$SOURCE_PASS  \
 /TargetFile:$SOURCE_CRC_DB.bacpac
 
-
 docker exec -i i2b2-data-mssql /opt/sqlpackage/sqlpackage \
 /Action:Import \
 /TargetServerName:$TARGET_SERVER \
@@ -48,7 +47,8 @@ docker exec -i i2b2-data-mssql /opt/sqlpackage/sqlpackage \
 /TargetPassword:$TARGET_PASS \
 /SourceFile:$SOURCE_CRC_DB.bacpac \
 /Diagnostics:true
-
+echo "completed CRC db restore"
+sleep 10
 
 docker exec -i i2b2-data-mssql /opt/sqlpackage/sqlpackage \
 /Action:Export \
@@ -58,7 +58,6 @@ docker exec -i i2b2-data-mssql /opt/sqlpackage/sqlpackage \
 /SourcePassword:$SOURCE_PASS  \
 /TargetFile:$SOURCE_ONT_DB.bacpac
 
-
 docker exec -i i2b2-data-mssql /opt/sqlpackage/sqlpackage \
 /Action:Import \
 /TargetServerName:$TARGET_SERVER \
@@ -67,6 +66,8 @@ docker exec -i i2b2-data-mssql /opt/sqlpackage/sqlpackage \
 /TargetPassword:$TARGET_PASS \
 /SourceFile:$SOURCE_ONT_DB.bacpac \
 /Diagnostics:true
+echo "completed ONT db restore"
+sleep 10
 
 docker exec -i i2b2-data-mssql /opt/sqlpackage/sqlpackage \
 /Action:Export \
@@ -84,6 +85,8 @@ docker exec -i i2b2-data-mssql /opt/sqlpackage/sqlpackage \
 /TargetPassword:$TARGET_PASS \
 /SourceFile:$SOURCE_PM_DB.bacpac \
 /Diagnostics:true
+echo "completed PM db restore"
+sleep 10
 
 docker exec -i i2b2-data-mssql /opt/sqlpackage/sqlpackage \
 /Action:Export \
@@ -101,6 +104,8 @@ docker exec -i i2b2-data-mssql /opt/sqlpackage/sqlpackage \
 /TargetPassword:$TARGET_PASS \
 /SourceFile:$SOURCE_HIVE_DB.bacpac \
 /Diagnostics:true
+echo "completed HIVE db restore"
+sleep 10
 
 docker exec -i i2b2-data-mssql /opt/sqlpackage/sqlpackage \
 /Action:Export \
@@ -118,8 +123,8 @@ docker exec -i i2b2-data-mssql /opt/sqlpackage/sqlpackage \
 /TargetPassword:$TARGET_PASS \
 /SourceFile:$SOURCE_WD_DB.bacpac \
 /Diagnostics:true
-
-
+echo "completed WD db restore"
+sleep 10
 
 default_host="_IP=i2b2-data-mssql"
 default_port="_PORT=1433"
