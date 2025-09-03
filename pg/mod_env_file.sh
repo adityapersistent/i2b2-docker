@@ -11,6 +11,12 @@ default_username="_USER=i2b2"
 default_password="_PASS=demouser"
 default_dbname="_DB=i2b2"
 
+if [ $target_host = "dummy_host" ]; then
+
+    docker_network_gateway_ip=$(docker network inspect i2b2-net -f '{{range .IPAM.Config}}{{.Gateway}}{{end}}')
+    target_host=$docker_network_gateway_ip
+    echo "Target Server IP- " $target_host 
+fi  
 
 #updating the .env file
 
