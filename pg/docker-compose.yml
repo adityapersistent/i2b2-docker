@@ -8,10 +8,10 @@ services:
       - "80:80"
       - "444:443"
     command: /run-httpd.sh localhost
-    volumes:
-      - ../assets/recover.png:/var/www/html/webclient/assets/images/logo.png
-      - ../assets/login.html:/var/www/html/webclient//js-i2b2/cells/PM/assets/login.html
-      - ../assets/main_display.html:/var/www/html/webclient/assets/main_display.html
+    # volumes:
+    #   - ../assets/recover.png:/var/www/html/webclient/assets/images/logo.png
+    #   - ../assets/login.html:/var/www/html/webclient//js-i2b2/cells/PM/assets/login.html
+    #   - ../assets/main_display.html:/var/www/html/webclient/assets/main_display.html
     depends_on:
       - i2b2-core-server
     networks:
