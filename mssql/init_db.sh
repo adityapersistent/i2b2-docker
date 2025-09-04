@@ -1,4 +1,4 @@
-# sh init_db.sh dummy_host 1432 SA '<YourStrong@Passw0rd>' i2b2demodata i2b2metadata i2b2pm i2b2hive i2b2workdata
+# sh init_db.sh dummy_host 1432 SA '<YourStrong@Passw0rd>' i2b2demodata i2b2metadata i2b2pm i2b2hive i2b2workdata i2b2-core-server 8080
 
 export SOURCE_SERVER="localhost"
 export SOURCE_USER="sa"
@@ -18,6 +18,8 @@ export TARGET_ONT_DB=$6
 export TARGET_PM_DB=$7
 export TARGET_HIVE_DB=$8
 export TARGET_WD_DB=$9
+export CORE_SERVER_IP=$10
+export CORE_SERVER_PORT=$11
 
 if [ $TARGET_SERVER = "dummy_host" ]; then
 
@@ -123,5 +125,6 @@ docker exec -i i2b2-data-mssql /opt/sqlpackage/sqlpackage \
 echo "completed WD db restore"
 sleep 20
 
+sh upgrade_pm_hive.sh $CORE_SERVER_IP $CORE_SERVER_PORT $TARGET_SERVER $TARGET_CRC_DB $TARGET_ONT_DB $TARGET_PM_DB $TARGET_HIVE_DB $TARGET_WD_DB
 echo "Completed backup and restore for all the databases."
 echo "Run the mod_env_file script for updating environment variables."

@@ -12,7 +12,7 @@ services:
     depends_on:
       - i2b2-core-server
     # volumes:
-    #   - ../assets/recover.png:/var/www/html/webclient/assets/images/logo.png
+    #   - ../assets/logo.png:/var/www/html/webclient/assets/images/logo.png
     #   - ../assets/login.html:/var/www/html/webclient//js-i2b2/cells/PM/assets/login.html
     #   - ../assets/main_display.html:/var/www/html/webclient/assets/main_display.html
     networks:
