@@ -5,6 +5,7 @@ git clone https://github.com/devi2b2/i2b2-docker.git
 1. Navigate to the i2b2-docker directory.
 2. Execute the following command to start the i2b2:
 ```
+cd pg
 docker-compose up -d i2b2-web
 ```
 
