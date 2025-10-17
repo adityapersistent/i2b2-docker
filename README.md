@@ -13,6 +13,6 @@ docker-compose up -d
 ```
 http://localhost:8080/webclient
 ```
-5. Log in to the i2b2 web application using the default credentials:
+4. Log in to the i2b2 web application using the default credentials:
    - Username: demo
    - Password: demouser
