@@ -12,7 +12,7 @@ docker-compose up -d i2b2-web
 3. Wait for WildFly to start.
 4. Open a web browser and navigate to the following URL:
 ```
-http://localhost/webclient
+http://localhost:8080/webclient
 ```
 5. Log in to the i2b2 web application using the default credentials:
    - Username: demo
