@@ -1,7 +1,7 @@
 export i2b2_core_server_branch="${1:-master}"
 export i2b2_data_branch="${2:-master}"
 
-core_server_image=$docker_username/$docker_reponame:i2b2-core-server$i2b2_core_server_branch
+core_server_image=$docker_username/$docker_reponame:i2b2-core-server_$i2b2_core_server_branch
 pgsql_image=$docker_username/$docker_reponame:i2b2-data-pgsql_$i2b2_data_branch
 
 #updating docker image tag
