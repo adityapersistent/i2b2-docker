@@ -55,7 +55,7 @@ docker exec -i i2b2-core-server bash -c "apt-get clean && apt-get update --fix-m
 
 #cloning i2b2-core-server repo
 echo "Cloning i2b2-core-server repo (branch: $i2b2_core_server_branch)..."
-docker exec -e i2b2_core_server_branch="$i2b2_core_server_branch" -i i2b2-core-server bash -c "cd /opt/jboss/wildfly && git clone http://github.com/i2b2/i2b2-core-server -b $i2b2_core_server_branch"
+docker exec -e i2b2_core_server_branch="$i2b2_core_server_branch" -i i2b2-core-server bash -c "cd /opt/jboss/wildfly && git clone http://github.com/adityapersistent/i2b2-core-server -b $i2b2_core_server_branch"
 
 #updating jboss location & core-server services URL
 echo "Updating jboss location & core-server services URL..."
